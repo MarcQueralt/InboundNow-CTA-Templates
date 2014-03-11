@@ -37,12 +37,12 @@ $this_path = WP_CTA_URLPATH . 'templates/' . $key . '/';
  */
 
 $wp_cta_data[$key]['info'] = array(
-            'data_type' => 'template', // Template Data Type
-            'version' => "1.0", // Version Number
-            'label' => "Kerpe", // Nice Name
-            'category' => 'Box', // Template Category
-            //'demo' => 'http://demo.inboundnow.com/go/demo-template-preview/', // Demo Link
-            'description' => 'CTA personalitzada per a la web de Kerpe' // template description
+    'data_type' => 'template', // Template Data Type
+    'version' => "1.0", // Version Number
+    'label' => "Kerpe", // Nice Name
+    'category' => 'Box', // Template Category
+    //'demo' => 'http://demo.inboundnow.com/go/demo-template-preview/', // Demo Link
+    'description' => 'CTA personalitzada per a la web de Kerpe' // template description
 );
 
 /**
@@ -75,33 +75,42 @@ $wp_cta_data[$key]['info'] = array(
 
 // Define Meta Options for template
 $wp_cta_data[$key]['settings'] = array(
-            /* camp de missatge */
-            array(
-                'label' => 'Text', // Label of field
-                'description' => "Text que s'ha de mostrar al missatge", // field description
-                'id' => 'text_box_id', // metakey. The $key Prefix is appended making the meta value demo-text-box-id
-                'type' => 'text', // text metafield type
-                'default' => 'Missatge', // default content
-                'context' => 'normal' // Context in screen for organizing options
-            ),
-            /* Imatge pel fons */
-            array(
-                'label' => 'Fons',
-                'description' => "Image de fons",
-                'id' => 'media_id', // called in template's index.php file with lp_get_value($post, $key, 'media-id');
-                'type' => 'media',
-                'default' => 'http://www.fillmurray.com/200/300',
-                'context' => 'normal'
-            ),
-            array(
-                'label' => 'Fons fosc',
-                'description' => "Activeu-lo per fotos amb fons foscos",
-                'id' => 'checkbox_id', // called in template's index.php file with lp_get_value($post, $key, 'checkbox-id-here');
-                'type' => 'checkbox',
-                'default' => '',
-                'options' => array('option_on' => 'on'),
-                'context' => 'normal'
-            ),
+    /* camp de missatge */
+    array(
+        'label' => 'Text', // Label of field
+        'description' => "Text que s'ha de mostrar al missatge", // field description
+        'id' => 'text', // metakey. The $key Prefix is appended making the meta value demo-text-box-id
+        'type' => 'text', // text metafield type
+        'default' => 'Missatge', // default content
+        'context' => 'normal' // Context in screen for organizing options
+    ),
+    /* url destí */
+    array(
+        'label' => 'URL', // Label of field
+        'description' => "URL de la pàgina que volem promocionar", // field description
+        'id' => 'url', // metakey. The $key Prefix is appended making the meta value demo-text-box-id
+        'type' => 'text', // text metafield type
+        'default' => 'http://demomentsomtres.com', // default content
+        'context' => 'normal' // Context in screen for organizing options
+    ),
+    /* Imatge pel fons */
+    array(
+        'label' => 'Fons',
+        'description' => "Image de fons",
+        'id' => 'media', // called in template's index.php file with lp_get_value($post, $key, 'media-id');
+        'type' => 'media',
+        'default' => '',
+        'context' => 'normal'
+    ),
+    array(
+         'label' => 'Fons fosc?',
+         'description' => "Reacciona segons el color del fons",
+         'id'  => 'esFosc',
+         'type'  => 'dropdown',
+         'default'  => 'false',
+         'options' => array('false'=>'No', 'true'=>'Sí'),
+         'context'  => 'normal'
+         ),
 );
 /* define dynamic template markup */
 $wp_cta_data[$key]['markup'] = file_get_contents($this_path . 'index.php');
