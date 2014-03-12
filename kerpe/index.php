@@ -1,4 +1,8 @@
 <style type="text/css">
+    #kerpe-cta-content-wrapper {
+        height:100%;
+        width:100%;
+    }
     #kerpe-cta-content-wrapper a {
         display:block;
         background-image: url('{{media}}');
@@ -12,7 +16,7 @@
         left: 0px;
         display: block;
         width: 75%;
-        background-color:rgba(255,255,255,0.5);
+        background-color:rgba(255,255,255,0.75);
         padding:5px 10px;
         min-height:65px;
         text-transform:uppercase;
@@ -23,7 +27,7 @@
         color:#303030;
     }
     #kerpe-cta-content-wrapper a .missatge.fonsFosc {
-        background-color: rgba(0,0,0,0.25);
+        background-color: rgba(0,0,0,0.5);
         color: #fff;
     }
 </style>
